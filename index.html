@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc Mừng Sinh Nhật</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    color:white;
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.balloon{
+    position:absolute;
+    bottom:-100px;
+    width:50px;
+    height:70px;
+    border-radius:50%;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎂 Chúc Mừng Sinh Nhật 🎂</h1>
+    <h2>Anh Tiến</h2>
+    <p>
+        Chúc anh có một ngày sinh nhật thật vui vẻ,<br>
+        luôn mạnh khỏe, hạnh phúc và thành công! ❤️
+    </p>
+
+    <button onclick="showWish()">Nhấn vào đây 🎁</button>
+</div>
+
+<script>
+function showWish(){
+    alert("🎉 Chúc mừng sinh nhật Anh Tiến! Chúc anh luôn vui vẻ và đạt được mọi điều mong muốn!
+    mau mau lấy vợ nha anh  🎉");
+}
+
+// Tạo bóng bay
+for(let i=0;i<20;i++){
+    let balloon=document.createElement("div");
+    balloon.classList.add("balloon");
+
+    balloon.style.left=Math.random()*100+"%";
+    balloon.style.background=
+        `hsl(${Math.random()*360},100%,70%)`;
+
+    balloon.style.animationDuration=
+        (Math.random()*5+5)+"s";
+
+    document.body.appendChild(balloon);
+}
+</script>
+
+</body>
+</html>
